@@ -1,4 +1,4 @@
-Windows command-line utility to calculate the checksum of a file using a hash function.
+Windows command-line utility to calculate the checksum of a file.
 
 Usage : hash.exe -a <algorithm> -f <filename> [-c] [-m]
 -a <algorithm>, --algorithm=<algorithm> : Hash algorithm (adler32, crc32, gost, md2, md4, md5, panama, ripemd, ripemd128, ripemd160, ripemd256, ripemd320, sha0, sha1, sha224, sha256, sha384, sha512, sha512/224, sha512/256, sha3/224, sha3/256, sha3/384, sha3/512, tiger, tiger2, whirlpool)
