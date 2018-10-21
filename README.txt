@@ -9,4 +9,6 @@ Usage : hash.exe -a <algorithm> -f <filename> [-c] [-m]
 -v, --version : Print the version of the program and exit
 
 This program have been created by Yoann LAMY under the terms of the GNU General Public License v3.
+
+CREDITS :
 This program use the HashLib4Pascal library : https://github.com/Xor-el/HashLib4Pascal.
