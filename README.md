@@ -20,4 +20,4 @@ This program have been created by Yoann LAMY under the terms of the GNU General 
 ![Preview](hash-2.gif)
 
 CREDITS :
-This program use the HashLib4Pascal library : https://github.com/Xor-el/HashLib4Pascal.
+This program use the [HashLib4Pascal library](https://github.com/Xor-el/HashLib4Pascal).
