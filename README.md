@@ -13,9 +13,11 @@ Usage : hash.exe -a <algorithm> -f <filename> [-c] [-m]
 -v, --version : Print the version of the program and exit
 ```
 
-This program have been created by Yoann LAMY under the terms of the GNU General Public License v3.
+This program have been created by Yoann LAMY under the terms of the [GNU General Public License v3](http://www.gnu.org/licenses/gpl.html).
 
 ![Preview](hash-1.gif)
+
+Add to the shell context menu (optional) :
 
 ![Preview](hash-2.gif)
 
