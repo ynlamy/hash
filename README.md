@@ -15,9 +15,9 @@ Usage : hash.exe -a <algorithm> -f <filename> [-c] [-m]
 
 This program have been created by Yoann LAMY under the terms of the GNU General Public License v3.
 
-![hash-1](hash-1.gif)
+![Preview](hash-1.gif)
 
-![hash-2](hash-2.gif)
+![Preview](hash-2.gif)
 
 CREDITS :
 This program use the HashLib4Pascal library : https://github.com/Xor-el/HashLib4Pascal.
