@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Classes, SysUtils, CustApp,
-  Forms, Interfaces, Dialogs, HlpHashFactory, Clipbrd;
+  Forms, Interfaces, Windows, Dialogs, HlpHashFactory, Clipbrd;
 
 type
 
@@ -33,9 +33,19 @@ begin
   adler32 := LowerCase(THashFactory.TChecksum.CreateAdler32.ComputeFile(FileName).ToString());
 end;
 
+function crc16(FileName: String): String;
+begin
+  crc16 := LowerCase(THashFactory.TChecksum.TCRC.CreateCRC16_BUYPASS.ComputeFile(FileName).ToString());
+end;
+
 function crc32(FileName: String): String;
 begin
-  crc32 := LowerCase(THashFactory.TChecksum.CreateCRC32_PKZIP().ComputeFile(FileName).ToString());
+  crc32 := LowerCase(THashFactory.TChecksum.TCRC.CreateCRC32_PKZIP.ComputeFile(FileName).ToString());
+end;
+
+function crc64(FileName: String): String;
+begin
+  crc64 := LowerCase(THashFactory.TChecksum.TCRC.CreateCRC64_ECMA_182.ComputeFile(FileName).ToString());
 end;
 
 function gost(FileName: String): String;
@@ -220,10 +230,20 @@ begin
         Hash := adler32(FileName);
         HashMsg := 'The Adler-32 hash of the file '''+ FileName + ''' is : ' + #13#10 + Hash;
       end;
+    'crc16' :
+      begin
+        Hash := crc16(FileName);
+        HashMsg := 'The CRC-16 hash of the file '''+ FileName + ''' is : ' + #13#10 + Hash;
+      end;
     'crc32' :
       begin
         Hash := crc32(FileName);
         HashMsg := 'The CRC-32 hash of the file '''+ FileName + ''' is : ' + #13#10 + Hash;
+      end;
+    'crc64' :
+      begin
+        Hash := crc64(FileName);
+        HashMsg := 'The CRC-64 hash of the file '''+ FileName + ''' is : ' + #13#10 + Hash;
       end;
     'gost' :
       begin
@@ -363,6 +383,7 @@ begin
 
   // message
   if HasOption('m', 'message') then begin
+    ShowWindow(GetConsoleWindow, SW_HIDE);
     Application.Initialize;
     Application.MessageBox(PChar(HashMsg), 'hash', $00000040);
   end
@@ -385,7 +406,7 @@ end;
 
 procedure TMyHash.WriteVersion;
 begin
-  writeln('hash 1.0 : Copyright (c) 2018 Yoann LAMY');
+  writeln('hash 1.1 : Copyright (c) 2021 Yoann LAMY');
   writeln();
 end;
 
@@ -400,7 +421,7 @@ procedure TMyHash.WriteHelp;
 begin
   writeln('Usage : ', ExeName, ' -a <algorithm> -f <filename> [-c] [-m]');
   writeln();
-  writeln('-a <algorithm>, --algorithm=<algorithm> : Hash algorithm (adler32, crc32, gost, md2, md4, md5, panama, ripemd, ripemd128, ripemd160, ripemd256, ripemd320, sha0, sha1, sha224, sha256, sha384, sha512, sha512/224, sha512/256, sha3/224, sha3/256, sha3/384, sha3/512, tiger, tiger2, whirlpool)');
+  writeln('-a <algorithm>, --algorithm=<algorithm> : Hash algorithm (adler32, crc16, crc32, crc64, gost, md2, md4, md5, panama, ripemd, ripemd128, ripemd160, ripemd256, ripemd320, sha0, sha1, sha224, sha256, sha384, sha512, sha512/224, sha512/256, sha3/224, sha3/256, sha3/384, sha3/512, tiger, tiger2, whirlpool)');
   writeln('-c, --clipboard : Copy the hash result to the clipboard');
   writeln('-f <filename>, --file=<filename> : Filename to generate the hash');
   writeln('-m, --message : Display the hash result in a dialog box');

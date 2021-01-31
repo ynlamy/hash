@@ -2,16 +2,16 @@
 <CONFIG>
   <ProjectSession>
     <PathDelim Value="\"/>
-    <Version Value="10"/>
+    <Version Value="11"/>
     <BuildModes Active="Release"/>
-    <Units Count="4">
+    <Units Count="6">
       <Unit0>
         <Filename Value="hash.pas"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="397"/>
-        <CursorPos X="26" Y="427"/>
-        <UsageCount Value="30"/>
+        <TopLine Value="375"/>
+        <CursorPos X="61" Y="388"/>
+        <UsageCount Value="32"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -35,7 +35,40 @@
         <CursorPos X="15" Y="1473"/>
         <UsageCount Value="10"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="..\wol\project1.lpi"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="XML"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="..\wol\project1.lpr"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit5>
     </Units>
-    <JumpHistory HistoryIndex="-1"/>
+    <JumpHistory Count="4" HistoryIndex="3">
+      <Position1>
+        <Filename Value="hash.pas"/>
+        <Caret Line="38" Column="57" TopLine="19"/>
+      </Position1>
+      <Position2>
+        <Filename Value="hash.pas"/>
+        <Caret Line="386" Column="43" TopLine="370"/>
+      </Position2>
+      <Position3>
+        <Filename Value="hash.pas"/>
+        <Caret Line="10" Column="63"/>
+      </Position3>
+      <Position4>
+        <Filename Value="hash.pas"/>
+        <Caret Line="406" Column="64" TopLine="393"/>
+      </Position4>
+    </JumpHistory>
+    <RunParams>
+      <FormatVersion Value="2"/>
+      <Modes Count="0" ActiveMode="default"/>
+    </RunParams>
   </ProjectSession>
 </CONFIG>
